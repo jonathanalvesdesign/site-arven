@@ -1,0 +1,13 @@
+.wrapper {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 24px 80px;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 400;
+}

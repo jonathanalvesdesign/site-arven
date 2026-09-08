@@ -1,0 +1,45 @@
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.pulseGlow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+.pulseDot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.floatIcon {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: floatIcon 2.4s ease-in-out infinite;
+}
