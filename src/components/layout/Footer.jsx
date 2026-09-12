@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import useSectionNav from "../../utils/useSectionNav";
 import styles from "./Footer.module.css";
-// TODO: substituir por <img src={logoArven} /> quando o arquivo chegar
-// import logoArven from "../../assets/images/logo-arven.svg";
+import logoArven from "../../assets/Logo/Logo.svg";
 
 const COLUMNS = [
   {
@@ -46,7 +45,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.top}>
-          <span className={styles.logo}>Arven</span>
+          <img src={logoArven} alt="Arven" className={styles.logo} />
 
           <div className={styles.columns}>
             {COLUMNS.map((column) => (

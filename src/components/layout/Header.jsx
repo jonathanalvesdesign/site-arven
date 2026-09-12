@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useSectionNav from "../../utils/useSectionNav";
 import styles from "./Header.module.css";
-// TODO: substituir por <img src={logoArven} /> quando o arquivo chegar
-// import logoArven from "../../assets/images/logo-arven.svg";
+import logoArven from "../../assets/Logo/Logo.svg";
 
 const NAV_ITEMS = [
   { label: "Início", href: "/" },
@@ -20,7 +19,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo}>
-          Arven
+          <img src={logoArven} alt="Arven" className={styles.logoImg} />
         </Link>
 
         <nav className={styles.nav}>
