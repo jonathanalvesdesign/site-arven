@@ -1,23 +1,17 @@
 import { Link } from "react-router-dom";
 import Button from "../ui/Button";
+import useSectionNav from "../../utils/useSectionNav";
 import styles from "./Hero.module.css";
 import heroBg from "../../assets/images/bg hero oficial.webp";
-import heroVideo from "../../assets/Videos/Vídeo 1.mp4";
 
 export default function Hero() {
-  return (
-    <section className={styles.hero}>
-      <video
-        className={styles.bgVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster={heroBg}
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
+  const handleNavClick = useSectionNav();
 
+  return (
+    <section
+      className={styles.hero}
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
       <div className={`container ${styles.content}`}>
         <div className={styles.text}>
           <h1 className={styles.title}>
@@ -32,7 +26,7 @@ export default function Hero() {
 
         <div className={styles.actions}>
           <Button variant="light" />
-          <Link to="/portfolio" className={styles.link}>
+          <Link to="/#portfolio" className={styles.link} onClick={handleNavClick("/#portfolio")}>
             Ver Projetos
           </Link>
         </div>

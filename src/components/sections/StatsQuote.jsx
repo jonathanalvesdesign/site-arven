@@ -22,7 +22,7 @@ export default function StatsQuote() {
   const rowRef = useRef(null);
   const cardRefs = useRef([]);
   const quoteBlockRef = useRef(null);
-  const [sectionRef, sectionInView] = useInView(0.1);
+  const [sectionRef, sectionInView, sectionAnimate] = useInView(0.1);
 
   useEffect(() => {
     let frame = null;
@@ -92,7 +92,7 @@ export default function StatsQuote() {
             <div
               className={`${styles.statCard} ${styles.reveal} ${
                 sectionInView ? styles.revealVisible : ""
-              }`}
+              } ${sectionInView && !sectionAnimate ? "no-transition" : ""}`}
               style={{ transitionDelay: `${index * 100}ms` }}
               key={stat.label}
               ref={(el) => (cardRefs.current[index] = el)}
@@ -106,7 +106,7 @@ export default function StatsQuote() {
         <div
           className={`${styles.quoteBlock} ${styles.reveal} ${
             sectionInView ? styles.revealVisible : ""
-          }`}
+          } ${sectionInView && !sectionAnimate ? "no-transition" : ""}`}
           style={{ transitionDelay: "300ms" }}
           ref={quoteBlockRef}
         >

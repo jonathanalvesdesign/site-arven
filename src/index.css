@@ -125,3 +125,7 @@ img {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+.no-transition {
+  transition: none !important;
+}

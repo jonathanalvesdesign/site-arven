@@ -72,7 +72,7 @@ export default function CtaForm() {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [wrapperRef, wrapperInView] = useInView(0.15);
+  const [wrapperRef, wrapperInView, wrapperAnimate] = useInView(0.15);
 
   const handleChange = (field) => (event) => {
     setFormData((prev) => ({ ...prev, [field]: event.target.value }));
@@ -127,7 +127,11 @@ export default function CtaForm() {
     <section className={styles.section}>
       <div className="container">
         <div className={styles.wrapper} ref={wrapperRef}>
-          <div className={`${styles.infoCard} ${styles.reveal} ${wrapperInView ? styles.revealVisible : ""}`}>
+          <div
+            className={`${styles.infoCard} ${styles.reveal} ${wrapperInView ? styles.revealVisible : ""} ${
+              wrapperInView && !wrapperAnimate ? "no-transition" : ""
+            }`}
+          >
             <div
               className={styles.infoGlow}
               style={{ backgroundImage: `url(${formularioImg})` }}
@@ -156,7 +160,7 @@ export default function CtaForm() {
           <div
             className={`${styles.formCard} ${styles.reveal} ${styles.revealDelay} ${
               wrapperInView ? styles.revealVisible : ""
-            }`}
+            } ${wrapperInView && !wrapperAnimate ? "no-transition" : ""}`}
           >
             <form className={styles.form} onSubmit={handleSubmit} noValidate>
               <h3 className={styles.formTitle}>

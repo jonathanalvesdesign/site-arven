@@ -52,7 +52,21 @@
 .cardImage {
   height: 404px;
   border-radius: var(--radius-card);
+  border: 1px solid #e4eaf3;
   overflow: hidden;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+  transition: transform 0.4s ease;
+}
+
+.cardImage:hover .cardImg {
+  transform: scale(1.14);
 }
 
 .cardText {

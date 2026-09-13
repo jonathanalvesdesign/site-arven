@@ -30,11 +30,13 @@ const POSTS = [
 ];
 
 function BlogCard({ post, index }) {
-  const [ref, inView] = useInView(0.2);
+  const [ref, inView, animate] = useInView(0.2);
 
   return (
     <div
-      className={`${styles.card} ${inView ? styles.cardVisible : ""}`}
+      className={`${styles.card} ${inView ? styles.cardVisible : ""} ${
+        inView && !animate ? "no-transition" : ""
+      }`}
       style={{ transitionDelay: `${index * 120}ms` }}
       ref={ref}
     >

@@ -34,11 +34,13 @@ const FAQ_ITEMS = [
 ];
 
 function FaqRow({ item, index, open, onToggle }) {
-  const [ref, inView] = useInView(0.2);
+  const [ref, inView, animate] = useInView(0.2);
 
   return (
     <div
-      className={`${styles.itemReveal} ${inView ? styles.itemVisible : ""}`}
+      className={`${styles.itemReveal} ${inView ? styles.itemVisible : ""} ${
+        inView && !animate ? "no-transition" : ""
+      }`}
       style={{ transitionDelay: `${index * 90}ms` }}
       ref={ref}
     >

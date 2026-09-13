@@ -1,21 +1,13 @@
 .hero {
   position: relative;
-  aspect-ratio: 2110 / 988;
+  height: 850px;
   display: flex;
   align-items: flex-end;
   background-color: var(--color-navy-800);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
-}
-
-.bgVideo {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  pointer-events: none;
 }
 
 .hero::before {
@@ -95,7 +87,6 @@
 
 @media (max-width: 768px) {
   .hero {
-    aspect-ratio: auto;
     height: auto;
     min-height: 700px;
     padding-top: 140px;

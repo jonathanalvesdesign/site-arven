@@ -57,6 +57,38 @@
   display: block;
 }
 
+.imageLink {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-card);
+  cursor: pointer;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-card);
+  background: rgba(1, 15, 31, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageLink:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imageOverlayText {
+  padding: 12px 28px;
+  border-radius: var(--radius-btn);
+  background: var(--color-white);
+  color: var(--color-text-dark);
+  font-size: var(--fs-body);
+  font-weight: 400;
+}
+
 .cardText {
   display: flex;
   flex-direction: column;
